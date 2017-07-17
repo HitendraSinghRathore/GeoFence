@@ -1,0 +1,59 @@
+<ion-view view-title="Map">
+    <ion-header-bar class="bar-balanced">
+        <h1 class="title">Geo Fence</h1>
+        <button class="button  button-clear" ng-click="mapobj.nextButton()">
+         Next
+        </button>
+    </ion-header-bar>
+    <ion-content>
+
+        <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXjvwpj23Hzc9ll6WExwAZWouPMe_AQBI" style="
+        padding:2% 2% 2% 2%">
+            <ng-map zoom="11" center="[{{mapobj.lat}},{{mapobj.long}}]" style="background-color:gray;height:50%;width:100%">
+
+
+                <shape ng-if="mapobj.selected=='Circle'" id="circle" name="circle" stroke-color='#FF0000' stroke-opacity="0.8" stroke-weight="2" center="[{{mapobj.lat}},{{mapobj.long}}]" radius="4000" editable="true"></shape>
+                <shape ng-if="mapobj.selected=='Rectangle'" id="rectangle" name="rectangle" stroke-color='#FF0000' stroke-opacity="0.8" stroke-weight="2" bounds="[[{{mapobj.lat-.05}},{{mapobj.long-.05}}], [{{mapobj.lat}},{{mapobj.long}}]]" editable="true" draggable="true"></shape>
+
+                <marker position="[{{mapobj.lat}},{{mapobj.long}}]"></marker>
+            </ng-map>
+        </div>
+
+        <div class="list">
+            <label class="item item-input item-select">
+        <div class="input-label">
+        Marker
+        </div>
+        <select ng-model="mapobj.selected">
+        <option >Circle</option>
+        <option>Rectangle</option>
+        </select>
+        </label>
+
+            <!--<div class="list list-inset">
+                <div class="item item-divider">
+                    Search by
+                </div>
+                <div class="item">
+                    <button class="button button-block button-positive" ng-click="mapobj.myLocation()">
+                    My Location
+                    </button>
+                </div>-->
+            <div class="item item-divider">
+                Search by Lat & Long
+            </div>
+            <div class="item">
+                <label class="item item-input">
+                        <span class="input-label">Lat.</span>
+                        <input type="number" ng-model="mapobj.lat">
+                    </label>
+                <label class="item item-input">
+                        <span class="input-label">Long.</span>
+                    <input type="number" ng-model="mapobj.long">
+                    </label>
+            </div>
+        </div>
+
+        </div>
+    </ion-content>
+</ion-view>

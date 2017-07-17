@@ -1,0 +1,13 @@
+<ion-view view-title="finalMap">
+    <ion-header-bar class="bar-balanced">
+        <h1 class="title">Geo Fence</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXjvwpj23Hzc9ll6WExwAZWouPMe_AQBI" style="
+        padding:2% 2% 2% 2%; height:100%">
+            <ng-map zoom="11" center="[{{finalMapObj.lat}},{{finalMapObj.long}}]" style="background-color:gray;height:100%;width:100%">
+                <marker position="[{{finalMapObj.lat}},{{finalMapObj.long}}]"></marker>
+            </ng-map>
+        </div>
+    </ion-content>
+</ion-view>

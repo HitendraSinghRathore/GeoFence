@@ -1,0 +1,64 @@
+<ion-view view-title="second">
+    <ion-header-bar class="bar-balanced">
+        <h1 class="title">Geo Fence</h1>
+        <button class="button  button-clear" ng-click="adminInfo.nextButton()">
+         Next
+        </button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <div class="list list-inset">
+                <div class="item item-divider item-balanced">
+                    Administrator Info
+                </div>
+                <div class="item">
+                    <div class="list">
+                        <form name="adminForm" novalidate>
+                            <label class="item item-input item-floating-label">
+                            <span class="input-label">Name</span>
+                            <input type="text" name="name" placeholder="Name" ng-model="adminInfo.name" required>
+                            </label>
+
+
+                            <label class="item item-input item-floating-label">
+                            <span class="input-label">Phone No.</span>
+                            <input type="tel" name="phoneNo" placeholder="Phone No." ng-model="adminInfo.phoneNo">
+                            </label>
+
+                            <label class="item item-input item-floating-label">
+                            <span class="input-label">Email</span>
+                            <input type="text" name="email" placeholder="Email" ng-model="adminInfo.email">
+                            </label>
+                        </form>
+                    </div>
+                    <div class="item item-divider item-balanced">
+                        Inform through
+                    </div>
+                    <div class="item">
+                        <ul class="list">
+
+                            <li class="item item-toggle">
+                                SMS
+                                <label class="toggle toggle-balanced">
+                                <input type="checkbox">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                                </label>
+                            </li>
+                            <li class="item item-toggle">
+                                Email
+                                <label class="toggle toggle-balanced">
+                                <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+    </ion-content>
+</ion-view>
